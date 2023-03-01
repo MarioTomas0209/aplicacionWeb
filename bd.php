@@ -1,12 +1,7 @@
 <?php
 
-$server = "localhost";
-$bd = "app";
-$user = "root";
-$password = "root";
+		$conexion = new PDO("mysql:host=localhost;dbname=app","root","");
 
-try{
-    $conexion = new PDO("mysql:host = $server; dbname = $bd, $user, $password");
-}catch(Exception $ex){
-    echo $ex -> getMessage();
-}
+		$conexion->exec("set names utf8");
+
+		return $conexion;
